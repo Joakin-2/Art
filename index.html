@@ -3,126 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="icon.jpg" type="image/x-icon">
     <title>Jin-Sei Art</title>
+    <link rel="icon" href="icon.jpg" type="image/x-icon">
+
     <style>
-        /* Resetando alguns estilos padrões */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
+            background-color: #000;
+            color: #fff;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2rem;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-        }
-        .main-section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-        .shop-section {
-            padding: 30px;
-            background-color: #fafafa;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
         }
-        .shop-item {
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        h1 {
+            font-size: 3rem;
+            opacity: 0;
+            animation: fadeIn 2s forwards, moveText 2s infinite alternate;
+            white-space: nowrap;
         }
-        .shop-item img {
-            max-width: 100%;
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateY(-5px) translateX(10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
+
+        .dots {
+            display: inline-block;
+            animation: dots 1.5s infinite steps(1, end);
         }
+
+        @keyframes dots {
+            0% {
+                content: " .";
+            }
+            33% {
+                content: " ..";
+            }
+            66% {
+                content: " ...";
+            }
+            100% {
+                content: " .";
+            }
+        }
+
+        /* Estilos para as partículas caindo */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Media Query para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Reduz o tamanho do texto para telas pequenas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem; /* Reduz ainda mais o tamanho do texto para telas muito pequenas */
+            }
+        }
+
     </style>
+
 </head>
 <body>
+    <div id="particles-js"></div>
+    <h1>Estamos desenvolvendo<span class="dots"></span></h1>
 
-<header>
-    <h1>Bem-vindo ao Meu Espaço Digital</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#loja">Loja</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
-
-<section id="home" class="main-section">
-    <h2>Social Media | Impressão 3D</h2>
-    <p>Como social media, ajudo empresas de impressão 3D a se destacar nas redes sociais. Conheça mais sobre meus serviços e produtos exclusivos.</p>
-</section>
-
-<section id="loja" class="shop-section">
-    <h2>Loja de Impressões 3D</h2>
-
-    <div class="shop-item">
-        <img src="https://m.media-amazon.com/images/I/61yHfUgEi-L._AC_SX522_.jpg" alt="Produto 1">
-        <h3>Produto 1</h3>
-        <p>Descrição do produto de impressão 3D.</p>
-        <a href="https://amzn.to/3FlAUJM" target="_blank">
-            <button>Ver Mais</button>
-        </a>
-    </div>    
-
-    <!-- <div class="shop-item">
-        <img src="produto2.jpg" alt="Produto 2">
-        <h3>Produto 2</h3>
-        <p>Descrição do produto de impressão 3D.</p>
-        <p><strong>R$ 299,99</strong></p>
-        <button>Comprar</button>
-    </div>
-
-    <!-- Adicione mais itens de loja conforme necessário -->
-</section>
-
-<section id="contato" class="main-section">
-    <h2>Entre em Contato</h2>
-    <p>Se você está interessado em meus serviços ou produtos, entre em contato:</p>
-    <p><a href="mailto:seuemail@exemplo.com">Envie um e-mail</a></p>
-    <p><a href="https://wa.me/5511999999999">WhatsApp</a></p>
-</section>
-
-<footer>
-    <p>&copy; 2025 - Todos os direitos reservados</p>
-    <p>
-        <a href="https://www.instagram.com/seuinstagram">Instagram</a>
-        <a href="https://www.linkedin.com/in/seulinkedin">LinkedIn</a>
-    </p>
-</footer>
-
+    <!-- Inclusão do particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 4,
+                        "size_min": 0.1
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "bottom",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
