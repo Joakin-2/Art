@@ -22,7 +22,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             letter-spacing: 2px;
         }
@@ -43,10 +43,14 @@
             margin-bottom: 10px;
         }
         .main-section {
-            height: 100%;
             padding: 50px 20px;
             text-align: center;
             background-color: #fff;
+    
+            display: flex;               /* NOVO */
+            flex-wrap: wrap;            /* Quebra linha se não couber */
+            justify-content: center;    /* Centraliza os itens */
+            gap: 20px;                  /* Espaço entre os itens */
         }
         .shop-section {
             padding: 30px;
