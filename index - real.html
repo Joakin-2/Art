@@ -6,138 +6,56 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="icon.jpg" type="image/x-icon">
     <title>Jin-Sei Art</title>
-    <style>
-        /* Resetando alguns estilos padrões */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2rem;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-        }
-        .main-section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-        .shop-section {
-            padding: 30px;
-            background-color: #fafafa;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .shop-item {
-            background-color: #fff;
-            padding: 20px;
-            margin: 10px;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .shop-item img {
-            max-width: 100%;
-        }
-        .botao-vermais {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #ff5e57;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-size: 16px;
-}
-
-.botao-vermais:hover {
-    background-color: #e04842;
-    transform: scale(1.05);
-}
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-    <h1>Bem-vindo ao Meu Espaço Digital</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#loja">Loja</a>
-        <a href="#contato">Contato</a>
-    </nav>
+    <h1>Acessórios para Criar o Futuro!</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Pesquise aqui..." onkeyup="searchSite()">
+        <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
 </header>
 
-<section id="home" class="main-section">
-    <h2>Social Media | Impressão 3D</h2>
-    <p>Como social media, ajudo empresas de impressão 3D a se destacar nas redes sociais. Conheça mais sobre meus serviços e produtos exclusivos.</p>
-</section>
-
-<section id="loja" class="shop-section">
-    <h2>Loja de Impressões 3D</h2>
-
+<section class="main-section">
     <div class="shop-item">
         <img src="https://m.media-amazon.com/images/I/61yHfUgEi-L._AC_SX522_.jpg" alt="Produto 1">
-        <h3>Produto 1</h3>
-        <p>Descrição do produto de impressão 3D.</p>
-        <a href="https://amzn.to/3FlAUJM" target="_blank" class="botao-vermais">Ver Mais</a>
+        <h3>Impressora 3D Bambu Lab A1</h3>
+        <p>Tecnologia avançada e inovação para proporcionar uma experiência única com uma estrutura aberta.</p>
+        <a href="https://amzn.to/3FlAUJM" id="openModal" class="botao-vermais">Ver Mais</a>
     </div>    
-
-    <!-- <div class="shop-item">
-        <img src="produto2.jpg" alt="Produto 2">
-        <h3>Produto 2</h3>
-        <p>Descrição do produto de impressão 3D.</p>
-        <p><strong>R$ 299,99</strong></p>
-        <button>Comprar</button>
-    </div>
-
-    <!-- Adicione mais itens de loja conforme necessário -->
-</section>
-
-<section id="contato" class="main-section">
-    <h2>Entre em Contato</h2>
-    <p>Se você está interessado em meus serviços ou produtos, entre em contato:</p>
-    <p><a href="mailto:seuemail@exemplo.com">Envie um e-mail</a></p>
-    <p><a href="https://wa.me/5511999999999">WhatsApp</a></p>
 </section>
 
 <footer>
-    <p>&copy; 2025 - Todos os direitos reservados</p>
-    <p>
-        <a href="https://www.instagram.com/seuinstagram">Instagram</a>
-        <a href="https://www.linkedin.com/in/seulinkedin">LinkedIn</a>
-    </p>
+    <p style="text-align: center;">&copy; 2025 - Todos os direitos reservados</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/jin_sei.art" target="_blank"><i class="fab fa-instagram" style="color: rgb(193, 174, 196);"></i></a>
+        <a href="https://www.youtube.com/@Jin-SeiArt" target="_blank"><i class="fab fa-youtube"  style="color: rgb(193, 174, 196);"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jinseiart.1205@gmail.com" target="_blank"><i class="fab fa-google"  style="color: rgb(193, 174, 196);"></i></a>
+    </div>
 </footer>
+
+<script>
+// Função de pesquisa
+function searchSite() {
+    var input, filter, items, h3s, i, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    items = document.querySelectorAll('.shop-item');
+    
+    // Loop através dos itens para verificar se o título ou descrição corresponde
+    for (i = 0; i < items.length; i++) {
+        h3s = items[i].getElementsByTagName("h3")[0];
+        txtValue = h3s.textContent || h3s.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
+</script>
 
 </body>
 </html>

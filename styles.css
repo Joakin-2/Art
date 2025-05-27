@@ -1,0 +1,155 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #252525;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .main-section {
+            height: 100%;
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .shop-section {
+            padding: 30px;
+            background-color: #fafafa;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .shop-item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .shop-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .shop-item:hover {
+            transform: translateY(-10px);
+        }
+        .botao-vermais {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+        }
+
+        .botao-vermais:hover {
+            background-color: #252525;
+            transform: scale(1.05);
+        }
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .search-bar {
+        padding: 10px;
+        font-size: 16px;
+        width: 40%;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .search-btn {
+        background-color: #ddd;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .search-btn i {
+        font-size: 18px;
+        color: #555;
+    }
+
+    /* Alterar cor do ícone ao passar o mouse */
+    .search-btn:hover i {
+        color: #000;
+    }
+
+        footer {
+            background-color: #252525;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.5rem;
+        }
+
+        footer .social-icons {
+            margin-top: 20px;
+        }
+
+        footer .social-icons i {
+            margin: 0 15px;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        footer .social-icons i:hover {
+            transform: scale(1.1);
+        }
